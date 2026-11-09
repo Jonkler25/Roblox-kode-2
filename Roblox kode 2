@@ -1,0 +1,22 @@
+
+#Roblox
+
+```Lua
+local lava = script.Parent
+
+-- Gjør at spilleren taper når den berører lavaen
+lava.Touched:Connect(function(hit)
+
+	-- Finn spilleren som berørte lavaen
+	local character = hit.Parent
+	local humanoid = character:FindFirstChild("Humanoid")
+
+	-- Sjekk om det faktisk er en spiller
+	if humanoid then
+
+		-- Sett spillerens liv til 0
+		humanoid.Health = 0
+
+	end
+end)
+```Lua
